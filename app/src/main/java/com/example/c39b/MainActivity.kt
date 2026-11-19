@@ -17,10 +17,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -84,7 +86,11 @@ fun MainBody() {
             )
 
         }
-        Row() {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Image(
                 painterResource(R.drawable.apple),
                 contentDescription = null,
@@ -93,6 +99,41 @@ fun MainBody() {
                     .clip(shape = CircleShape),
                 contentScale = ContentScale.Crop
             )
+
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text("170")
+                Text("Posts")
+            }
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("1M")
+                Text("Followers")
+            }
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("800")
+                Text("Followings")
+            }
+
+
+        }
+        //bio
+        Column(
+            modifier = Modifier.padding(20.dp)
+        ) {
+            Text("sandis001")
+            Text("this is description")
+            Text("works at softwarica")
+        }
+
+        ElevatedButton(onClick = {}) {
+            Text("Follow")
+        }
+
+        //story highlights
+        Row(
+            modifier = Modifier.fillMaxWidth()
+        ) {
 
         }
     }
