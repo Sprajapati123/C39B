@@ -50,34 +50,37 @@ fun SpotifyBody() {
                 .fillMaxWidth()
                 .padding(top = 50.dp, bottom = 25.dp)
         ) {
-           Row(modifier = Modifier.weight(1f)) {
-               Text(
-                   "Recently Played",
-                   style = TextStyle(
-                       fontWeight = FontWeight.Bold,
-                       fontSize = 20.sp,
-                   )
-               )
-           }
-          Row(
-              horizontalArrangement = Arrangement.End,
-              modifier = Modifier.weight(1f)) {
-              Image(
-                  painterResource(R.drawable.settings),
-                  contentDescription = null,
-                  modifier = Modifier.size(30.dp)
-              )
-              Image(
-                  painterResource(R.drawable.notification),
-                  contentDescription = null,
-                  modifier = Modifier.size(30.dp)
-              )
-              Image(
-                  painterResource(R.drawable.history),
-                  contentDescription = null,
-                  modifier = Modifier.size(30.dp)
-              )
-          }
+            Row(modifier = Modifier.weight(1f)) {
+                Text(
+                    "Recently Played",
+                    style = TextStyle(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp,
+                    )
+                )
+            }
+            Row(
+                horizontalArrangement = Arrangement.End,
+                modifier = Modifier.weight(1f)
+            ) {
+                Image(
+                    painterResource(R.drawable.settings),
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+                Image(
+                    painterResource(R.drawable.notification),
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+                Image(
+                    painterResource(R.drawable.history),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(30.dp)
+
+                )
+            }
         }
     }
 }
