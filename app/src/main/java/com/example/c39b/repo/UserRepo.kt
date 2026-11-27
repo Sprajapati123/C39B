@@ -41,4 +41,7 @@ interface UserRepo {
                               String,List<UserModel>?) -> Unit)
     fun logout(callback: (Boolean, String) -> Unit)
 
+
+    fun forgetPassword(email: String,
+                       callback: (Boolean, String) -> Unit)
 }
