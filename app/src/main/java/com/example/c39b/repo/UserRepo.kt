@@ -10,18 +10,35 @@ interface UserRepo {
 //    }
 
 
-    fun login(email: String, password: String, callback: (Boolean, String) -> Unit)
+    fun login(
+        email: String, password: String,
+        callback: (Boolean, String) -> Unit
+    )
 
-    fun register()
-    fun addUserToDatabase()
+    //authentication
+    fun register(
+        email: String, password: String,
+        callback: (Boolean, String, String) -> Unit
+    )
 
-    fun editProfile(userId: String, model: UserModel,
-                    callback: (Boolean, String) -> Unit)
+    //database
+    fun addUserToDatabase(
+        id: String, model: UserModel,
+        callback: (Boolean, String) -> Unit
+    )
 
-    fun deleteUser(userId: String, callback: (Boolean, String) -> Unit)
-
-    fun getUserById()
-    fun getAllUser()
-    fun logout()
+    fun editProfile(
+        userId: String, model: UserModel,
+        callback: (Boolean, String) -> Unit
+    )
+    fun deleteUser(userId: String,
+                   callback: (Boolean, String) -> Unit)
+    fun getUserById(
+        id: String,
+        callback: (Boolean, String, UserModel?) -> Unit
+    )
+    fun getAllUser(callback: (Boolean,
+                              String,List<UserModel>?) -> Unit)
+    fun logout(callback: (Boolean, String) -> Unit)
 
 }
